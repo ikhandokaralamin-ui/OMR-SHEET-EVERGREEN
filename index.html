@@ -320,6 +320,68 @@
   @font-face{font-family:'SutonnyOMJ';font-weight:400;font-style:normal;src:local('SutonnyOMJ'),local('Sutonny OMJ'),local('SutonnyOMJ-Regular'),local('SutonnyMJ'),local('Sutonny MJ')}
   @font-face{font-family:'SutonnyOMJ';font-weight:700;font-style:normal;src:local('SutonnyOMJ Bold'),local('SutonnyOMJ-Bold'),local('Sutonny OMJ Bold')}
   body.f-sutonny{--font-bn:'SutonnyOMJ','AdarshaLipi','AdorshoLipi','Kalpurush','Siyam Rupali','Noto Sans Bengali','Hind Siliguri',sans-serif}
+
+  /* ===== হেডার: নাম, শিরোনাম ও ঠিকানা পেজের ঠিক মাঝে; লোগো নামের বামে ===== */
+  .head-top{grid-template-rows:21.5mm 14mm}
+  .brand{justify-content:center;padding:0}
+  .brand .bwrap{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;min-width:0}
+  .brand .blogo{position:absolute;right:100%;top:50%;transform:translateY(-50%);width:22mm;height:22mm;margin:0 3.5mm 0 0}
+  .brand .sn{margin-bottom:1.1mm}
+  .brand .tt{display:flex;align-items:center;justify-content:center;gap:2mm;font-size:14px;font-weight:700;color:#000;margin:0;line-height:1.25;letter-spacing:.03em}
+  .brand .tt::before,.brand .tt::after{content:"◆";font-size:7px;color:var(--mag)}
+  .brand .addr{font-size:11.5px;font-weight:600;color:#2b2030;margin-top:.5mm;line-height:1.3;white-space:nowrap;letter-spacing:.01em}
+  body.bw .brand .tt::before,body.bw .brand .tt::after{color:#000}
+
+  /* ===== চূড়ান্ত অ্যালাইনমেন্ট ===== */
+  .head-top{padding:0}
+  .head-top > .idbox:first-child{top:1.6mm}
+  .head-top > .idbox:last-child{top:1.6mm}
+  .warn-black{margin:0}
+  .warn-pen{margin:2.2mm 12mm 0}
+  .title{margin:1mm 0 1.6mm}
+
+  /* ===== নাম ও লোগো অ্যাডজাস্টেবল (CSS ভ্যারিয়েবল) ===== */
+  .head-top{grid-template-rows:var(--head-h,21.5mm) 14mm}
+  .brand .blogo{width:var(--logo-size,22mm);height:var(--logo-size,22mm);margin:0 var(--logo-gap,3.5mm) 0 0;
+    transform:translate(var(--logo-x,0mm),calc(-50% + var(--logo-y,0mm)))}
+  .brand .sn{font-size:var(--name-size,34px);-webkit-text-stroke:var(--name-stroke,.5px) #000;letter-spacing:var(--name-ls,.01em)}
+  .brand .tt{font-size:var(--tt-size,14px)}
+  .brand .addr{font-size:var(--addr-size,11.5px)}
+  body.no-ul .brand .sn{border-bottom-color:transparent}
+
+  /* ===== লোগো + নাম একসাথে (অ্যাটাচড), পুরো গ্রুপ মাঝ বরাবর ===== */
+  .head-top{grid-template-rows:var(--head-h,20mm) 14mm}
+  .brand .bwrap{display:grid;grid-template-columns:auto auto;grid-template-rows:auto auto auto;
+    column-gap:var(--logo-gap,3mm);align-items:center;justify-content:center;position:static}
+  .brand .blogo{position:static;grid-column:1;grid-row:1 / span 3;align-self:center;margin:0;
+    width:var(--logo-size,17mm);height:var(--logo-size,17mm);object-fit:contain;
+    transform:translate(var(--logo-x,0mm),var(--logo-y,0mm))}
+  .brand .sn{grid-column:2;grid-row:1;justify-self:center}
+  .brand .tt{grid-column:2;grid-row:2;justify-self:center}
+  .brand .addr{grid-column:2;grid-row:3;justify-self:center}
+
+  /* ===== নতুন ডিজাইন: শিরোনাম ও ঠিকানা দুই বক্সের ঠিক মাঝে (পেজের মাঝ বরাবর) ===== */
+  .head-top{grid-template-columns:48mm 1fr 48mm;grid-template-rows:var(--head-h,18mm) 15mm;column-gap:3mm}
+  .head-top > .brand{grid-row:1;grid-column:1 / -1}
+  .head-top > .idbox:first-of-type{grid-row:2;grid-column:1}
+  .head-top > .idbox:last-child{grid-row:2;grid-column:3}
+  .brand .bwrap{grid-template-rows:auto}
+  .brand .blogo{grid-row:1}
+  .head-top > .mid{grid-row:2;grid-column:2;align-self:end;position:relative;top:1.6mm;height:13.5mm;
+    display:flex;flex-direction:column;align-items:center;justify-content:space-between;min-width:0}
+  .mid .tt{display:inline-flex;align-items:center;justify-content:center;gap:2.6mm;background:#000;color:#fff!important;
+    font-size:var(--tt-size,17px);font-weight:700;letter-spacing:.04em;line-height:1.2;
+    padding:.5mm 6mm .8mm;border-radius:4mm;box-shadow:0 0 0 1.2px #fff,0 0 0 2.4px var(--mag);white-space:nowrap}
+  .mid .tt::before,.mid .tt::after{content:"◆";font-size:8px;color:var(--gold)}
+  .mid .tt .editable:hover,.mid .tt .editable:focus{color:#000}
+  .mid .addr{display:flex;align-items:center;gap:2.4mm;width:100%;justify-content:center;white-space:nowrap;
+    font-size:var(--addr-size,12px);font-weight:700;color:#2b2030;line-height:1.2;letter-spacing:.01em}
+  .mid .addr::before,.mid .addr::after{content:"";flex:1;height:1.2px;min-width:3mm;background:linear-gradient(90deg,transparent,var(--mag))}
+  .mid .addr::after{background:linear-gradient(270deg,transparent,var(--mag))}
+  body.bw .mid .tt::before,body.bw .mid .tt::after{color:#fff}
+  body.bw .mid .tt{box-shadow:0 0 0 1.2px #fff,0 0 0 2.4px #000}
+  body.bw .mid .addr::before{background:linear-gradient(90deg,transparent,#000)}
+  body.bw .mid .addr::after{background:linear-gradient(270deg,transparent,#000)}
 </style>
 </head>
 
@@ -461,6 +523,16 @@
       <button id="pm-print-bw" type="button" class="bg-slate-200 hover:bg-white text-slate-900 text-[11px] font-bold py-1.5 rounded-lg cursor-pointer">🖨 সাদা-কালো প্রিন্ট</button>
     </div>
     <p class="text-[10.5px] text-slate-400 mt-2 leading-snug">সাদা-কালো মোডে সব রঙ ধূসর/কালো হয়ে যায়, বৃত্ত ও বারকোড অপরিবর্তিত থাকে।</p>
+  </div>
+
+  <div class="bg-white/5 border border-white/10 rounded-xl p-3 mb-3.5">
+    <div class="flex items-center justify-between mb-2">
+      <span class="text-[11px] font-bold tracking-wider text-lime-300">🏫 নাম ও লোগো অ্যাডজাস্ট</span>
+      <button id="brand-reset" type="button" class="text-[10px] bg-slate-900 hover:bg-black border border-slate-700 text-slate-300 px-2 py-0.5 rounded cursor-pointer">Reset</button>
+    </div>
+    <div id="brand-ctl" class="space-y-1.5"></div>
+    <label class="flex items-center gap-2 mt-2 text-[10.5px] text-slate-300 cursor-pointer"><input id="brand-ul" type="checkbox" checked class="accent-lime-400"> নামের নিচের সোনালি রেখা দেখান</label>
+    <p class="text-[10.5px] text-slate-400 mt-1.5 leading-snug">স্লাইডার টেনে লোগো/নামের সাইজ ও অবস্থান ঠিক করুন; সব শিটে একসাথে বদলাবে। লোগো পাল্টাতে নিচের "পরীক্ষা ও লেআউট"-এর Upload Logo ব্যবহার করুন।</p>
   </div>
 
   <div class="bg-white/5 border border-white/10 rounded-xl p-3 mb-3.5">
@@ -649,11 +721,14 @@
           </div>
         </div>
         <div class="brand">
-          <img src="${getLogo()}" alt="logo" />
-          <div>
+          <div class="bwrap">
+            <img class="blogo" src="${getLogo()}" alt="logo" />
             <div class="sn">${ed('schoolBn', state.schoolBn, '', 'স্কুলের নাম')}</div>
-            <div class="tt">${ed('ttlBn','ওএমআর উত্তরপত্র –')} ${toBn(state.qCount)} ${ed('ttlBn2','নম্বর')}</div>
           </div>
+        </div>
+        <div class="mid">
+          <div class="tt">${ed('ttlBn','ওএমআর উত্তরপত্র –')} ${toBn(state.qCount)} ${ed('ttlBn2','নম্বর')}</div>
+          <div class="addr">${ed('addr','জেনারেল রোড, মোঃ ডেনিমস রোড, সফিপুর, কালিয়াকোর, গাজীপুর','','ঠিকানা')}</div>
         </div>
         <div class="idbox" style="align-items:center">
           <span class="cap">${ed('lblBarcode','OPTICAL BARCODE ID')}</span>
@@ -749,7 +824,7 @@
               <li>${ed('r2','বৃত্তাকার ঘরগুলো অবশ্যই বল-পয়েন্ট কলম দিয়ে ভরাট করতে হবে।')}</li>
               <li>${ed('r3','উত্তরপত্রে কোন অবাঞ্ছিত দাগ দেওয়া যাবে না।')}</li>
               </ol></div><div class="rc"><ol><li>${ed('r4','উত্তরপত্রটিকে কোন অবস্থাতেই ভাঁজ করা যাবে না।')}</li>
-              <li>${ed('r5','পরিস্কার পরিচ্ছন্ন ও ভাঁজবিহীন উত্তরপত্র মেশিনে মূল্যায়নের জন্য অপরিহার্য।')}</li>
+              <li>${ed('r5','পরিষ্কার পরিচ্ছন্ন ও ভাঁজবিহীন উত্তরপত্র মেশিনে মূল্যায়নের জন্য অপরিহার্য।')}</li>
               <li>${ed('r6','সেট কোড না লিখলে / বৃত্ত ভরাট না করলে উত্তরপত্র বাতিল হবে।')}</li>
             </ol></div>
           </div>
@@ -775,6 +850,9 @@
       if (svg && typeof JsBarcode !== 'undefined'){
         try {
           JsBarcode(svg, code, {format:'CODE128', width:1, height:26, displayValue:false, margin:0, background:'transparent', lineColor:'#111'});
+          const bw_=parseFloat(svg.getAttribute('width')),bh_=parseFloat(svg.getAttribute('height'));
+          if(!svg.getAttribute('viewBox') && bw_ && bh_) svg.setAttribute('viewBox','0 0 '+bw_+' '+bh_);
+          svg.removeAttribute('width'); svg.removeAttribute('height');
           svg.setAttribute('preserveAspectRatio','none');
         } catch(e){ console.warn('Barcode failed', code); }
       }
@@ -1004,6 +1082,43 @@
       apply(); showToast('ফন্ট চালু হয়েছে');
     });
     (document.fonts&&document.fonts.ready?document.fonts.ready:Promise.resolve()).then(restore);
+  })();
+
+  (function(){
+    const DEFS=[
+      {v:'--logo-size', l:'লোগোর সাইজ',        min:10,max:36,step:.5,def:17,  u:'mm'},
+      {v:'--logo-gap',  l:'লোগো ↔ নামের দূরত্ব', min:0, max:20,step:.5,def:3, u:'mm'},
+      {v:'--logo-x',    l:'লোগো ডানে/বামে',     min:-20,max:20,step:.5,def:0,   u:'mm'},
+      {v:'--logo-y',    l:'লোগো উপরে/নিচে',     min:-10,max:10,step:.5,def:0,   u:'mm'},
+      {v:'--name-size', l:'স্কুলের নামের সাইজ',  min:20,max:52,step:1, def:34,  u:'px'},
+      {v:'--name-stroke',l:'নামের মোটা ভাব',     min:0, max:1.2,step:.1,def:.5, u:'px'},
+      {v:'--tt-size',   l:'ওএমআর শিরোনাম সাইজ',  min:9, max:26,step:.5,def:17,  u:'px'},
+      {v:'--addr-size', l:'ঠিকানার সাইজ',       min:8, max:18,step:.5,def:12,u:'px'},
+      {v:'--head-h',    l:'হেডারের উচ্চতা',      min:14,max:34,step:.5,def:18,u:'mm'}
+    ];
+    const KEY='omr_brand_v3', root=document.documentElement;
+    let vals={}; try{ vals=JSON.parse(localStorage.getItem(KEY)||'{}'); }catch(e){}
+    const box=document.getElementById('brand-ctl'), ul=document.getElementById('brand-ul');
+    function apply(d){ const v = vals[d.v]!=null ? vals[d.v] : d.def; root.style.setProperty(d.v, v+d.u); return v; }
+    function save(){ try{ localStorage.setItem(KEY, JSON.stringify(vals)); }catch(e){} }
+    function refit(){ try{ fitAnswerGrids(); }catch(e){} }
+    DEFS.forEach(d=>{
+      const v=apply(d);
+      const row=document.createElement('div');
+      row.innerHTML='<div class="flex items-center justify-between text-[10px] text-slate-400"><span>'+d.l+'</span><span class="font-mono-code font-bold text-lime-300" data-out>'+v+d.u+'</span></div>'+
+        '<input type="range" min="'+d.min+'" max="'+d.max+'" step="'+d.step+'" value="'+v+'" class="w-full accent-lime-400 cursor-pointer h-1.5 bg-slate-700 rounded-lg">';
+      const inp=row.querySelector('input'), out=row.querySelector('[data-out]');
+      inp.addEventListener('input',()=>{ vals[d.v]=parseFloat(inp.value); out.textContent=inp.value+d.u; root.style.setProperty(d.v, inp.value+d.u); save(); refit(); });
+      d._inp=inp; d._out=out; box.appendChild(row);
+    });
+    try{ const u=localStorage.getItem(KEY+'_ul'); if(u==='0'){ ul.checked=false; document.body.classList.add('no-ul'); } }catch(e){}
+    ul.addEventListener('change',()=>{ document.body.classList.toggle('no-ul', !ul.checked); try{ localStorage.setItem(KEY+'_ul', ul.checked?'1':'0'); }catch(e){} });
+    document.getElementById('brand-reset').addEventListener('click',()=>{
+      vals={}; save();
+      DEFS.forEach(d=>{ apply(d); d._inp.value=d.def; d._out.textContent=d.def+d.u; });
+      ul.checked=true; document.body.classList.remove('no-ul'); try{ localStorage.setItem(KEY+'_ul','1'); }catch(e){}
+      refit(); showToast('নাম ও লোগো ডিফল্টে ফিরেছে');
+    });
   })();
 </script>
 </body>

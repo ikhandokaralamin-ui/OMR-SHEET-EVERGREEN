@@ -184,6 +184,142 @@
     .editable:hover,.editable:focus{background:none!important;box-shadow:none!important}
     .editable:empty::before{content:''!important}
   }
+
+  /* ===== হেডার ব্র্যান্ডিং আপডেট ===== */
+  .head-top{grid-template-columns:48mm 1fr 48mm;grid-template-rows:17mm 13mm;gap:0 3mm;height:auto;padding:0 1mm}
+  .brand{grid-column:1/-1;grid-row:1;gap:3.5mm;padding:0 2mm}
+  .brand img{width:20mm;height:20mm;margin:-2mm 0}
+  .brand > div{display:flex;flex-direction:column;align-items:center;min-width:0}
+  .brand .sn{font-size:31px;font-weight:700;line-height:1.15;letter-spacing:.01em;color:#fff;
+    background:linear-gradient(90deg,var(--mag-dark),var(--mag) 50%,var(--mag-dark));
+    padding:.6mm 5mm .9mm;border-radius:2mm;text-shadow:0 .4mm .6mm rgba(0,0,0,.35);
+    box-shadow:0 0 0 1px var(--mag-dark);white-space:nowrap}
+  .brand .tt{font-size:12px;font-weight:700;margin-top:.8mm;color:var(--mag-dark)}
+  .head-top > .idbox:first-child{grid-row:2;grid-column:1;align-self:end;height:12.5mm;margin-left:-1mm}
+  .head-top > .idbox:last-child{grid-row:2;grid-column:3;align-self:end;height:12.5mm;margin-right:-1mm}
+  .head-top > .idbox svg{height:15px!important}
+
+  /* ===== প্রিমিয়াম কালার ও অ্যালাইনমেন্ট ===== */
+  :root{
+    --mag:#b3148a; --mag-dark:#7d0f62; --pink:#f8cdee; --pink-deep:#f2aadf; --pale:#fff0fb;
+    --gold:#f2b01e; --ink:#1a0f1c;
+  }
+  body{background:radial-gradient(1100px 600px at 75% -10%,#f3d9ee 0%,transparent 60%),linear-gradient(180deg,#e9e2ec,#d6ccdb)}
+
+  /* হেডার */
+  .head-top{padding:0 .5mm;row-gap:1.2mm}
+  .brand{gap:4mm}
+  .brand img{filter:drop-shadow(0 .4mm .6mm rgba(125,15,98,.25))}
+  .brand .sn{
+    background:linear-gradient(90deg,#6f0b57 0%,#b3148a 50%,#6f0b57 100%);
+    border-radius:2.2mm;padding:.7mm 6mm 1mm;
+    box-shadow:0 .9mm 0 var(--gold),0 0 0 1px #6f0b57;
+    margin-bottom:1.2mm}
+  .brand .tt{color:var(--mag-dark);letter-spacing:.02em;font-size:12.5px;margin-top:.6mm}
+  .idbox{background:linear-gradient(180deg,#fff7fd 0%,var(--pale) 100%);border:1.3px solid var(--mag);
+    border-left:2.4mm solid var(--mag);border-radius:1.6mm;padding:1mm 2mm}
+  .head-top > .idbox:last-child{border-left:1.3px solid var(--mag);border-right:2.4mm solid var(--mag)}
+  .idbox .cap{color:var(--mag-dark);font-size:7.5px}
+  .idbox .code{color:var(--ink)}
+
+  /* পরীক্ষা লাইন ও শিরোনাম */
+  .exam-line{align-items:center;gap:2.5mm;height:8mm;margin-top:1.2mm;font-size:13px;color:var(--ink)}
+  .exam-name{border-bottom:1.3px solid var(--mag-dark);height:6mm;display:inline-flex;align-items:flex-end;justify-content:center;padding-bottom:.4mm}
+  .yearbox span{border-color:var(--mag-dark);color:var(--ink);background:#fff}
+  .title{display:flex;align-items:center;justify-content:center;gap:3mm;margin:1mm 14mm 1.6mm;font-size:14px;font-weight:700;color:var(--mag-dark)}
+  .title::before,.title::after{content:"";flex:1;height:1.2px;background:linear-gradient(90deg,transparent,var(--mag))}
+  .title::after{background:linear-gradient(270deg,transparent,var(--mag))}
+  .warn-black{background:linear-gradient(180deg,#2a1a2d,#150b17);border-radius:1.2mm;letter-spacing:.01em}
+  .warn-pen{background:linear-gradient(180deg,#fff,var(--pale));border:1.6px solid var(--mag);border-radius:3mm;
+    color:var(--mag-dark);box-shadow:inset 0 0 0 .8mm #fff,inset 0 0 0 1.1mm var(--pink-deep)}
+
+  /* উত্তর কলাম */
+  .col,.box{border-color:var(--mag);border-radius:1.6mm}
+  .col-head,.box-title{background:linear-gradient(180deg,#fff5fc,var(--pink));color:var(--mag-dark);border-bottom-color:var(--mag)}
+  .col-head div:first-child{border-right-color:var(--mag)}
+  .arow{background:var(--pink)}
+  .arow:nth-child(even){background:#fbdaf3}
+  .arow.blank{background:#fff}
+  .arow{border-bottom:1.2px solid #fff}
+  .arow:nth-child(5n){border-bottom:1.5px solid var(--mag)}
+  .arow:last-child{border-bottom:0}
+  .qn{background:linear-gradient(90deg,var(--pink-deep),#f6bfe8);border-right-color:var(--mag);color:var(--ink)}
+  .b{border:1.1px solid var(--mag-dark);color:var(--mag-dark);background:#fff}
+  .b:hover{background:#ffe2f7}
+  .b.filled{background:#111!important;border-color:#111!important;color:#fff!important}
+
+  /* ডান পাশের বক্স */
+  .digits{background:var(--pink)}
+  .dcol{border-right-color:#fff}
+  .dcol .w{background:#fff;border-bottom-color:var(--mag)}
+  .setcol .w,.sigbox,.datebox{border-color:var(--mag);border-radius:1.2mm}
+  .setpill{background:linear-gradient(180deg,var(--pink),#fbdaf3);border-color:var(--mag)}
+  .siglabel{color:var(--mag-dark);font-weight:700;font-size:9.3px}
+  .received-box{background:#fff}
+  .other-branch{border-color:var(--mag)}
+  .choice-item{color:var(--ink)}
+  .note{background:linear-gradient(180deg,#fff,var(--pale));border-color:var(--mag);color:var(--mag-dark)}
+
+  /* নিয়মাবলী */
+  .rules{border-color:var(--mag);border-radius:1.6mm}
+  .rules h3{background:linear-gradient(90deg,#fff5fc,var(--pink),#fff5fc);color:var(--mag-dark);border-bottom-color:var(--mag)}
+  .rules .rc+.rc{border-left:1px dashed var(--pink-deep)}
+  .rules li::before{color:var(--mag-dark)}
+  .method{color:var(--ink)}
+
+  /* ফুটার */
+  .foot{color:#6b4a63;border-top:1px solid var(--pink-deep);padding-top:.6mm}
+  .foot .font-en{color:var(--mag-dark);font-weight:700}
+
+  /* ===== স্কুলের নাম: কালো বোল্ড ===== */
+  .brand .sn{background:none!important;color:#000!important;text-shadow:none!important;box-shadow:none!important;
+    font-size:34px;font-weight:700;-webkit-text-stroke:.5px #000;letter-spacing:.01em;line-height:1.1;
+    padding:0 2mm 1.3mm;border-radius:0;border-bottom:1.1mm solid var(--gold);margin-bottom:1mm}
+  .brand .tt{color:#000;font-weight:700}
+
+  /* ===== সিরিয়াল বক্স (বামে): ছোট বক্স, বড় লেখা ===== */
+  .head-top{grid-template-columns:42mm 1fr 54mm;grid-template-rows:17mm 14mm;margin-bottom:1.6mm}
+  .head-top > .idbox{height:13.5mm;padding:.9mm 2mm .9mm 1.8mm;justify-content:space-around}
+  .head-top > .idbox:first-child{margin-left:0;position:relative;top:1.2mm}
+  .head-top > .idbox:first-child .cap{font-size:9px}
+  .head-top > .idbox:first-child .sb span.font-mono-code{font-size:11px!important}
+  .head-top > .idbox:first-child .code{font-size:12.5px}
+  .head-top > .idbox:first-child .sb[style]{font-size:11px!important}
+  /* ===== বারকোড বক্স (ডানে): আরও নিচে ===== */
+  .head-top > .idbox:last-child{margin-right:0;position:relative;top:2mm;justify-content:space-between}
+  .head-top > .idbox:last-child .cap{font-size:8.5px}
+  .head-top > .idbox:last-child svg{height:19px!important}
+  .head-top > .idbox:last-child .code{font-size:11px!important}
+
+  /* ===== সাদা-কালো প্রিন্ট মোড ===== */
+  body.bw{--mag:#222;--mag-dark:#000;--pink:#e3e3e3;--pink-deep:#cbcbcb;--pale:#f4f4f4;--gold:#000}
+  body.bw .brand img{filter:grayscale(1) contrast(1.1)}
+  body.bw .arow:nth-child(even){background:#eeeeee}
+  body.bw .qn{background:#cbcbcb}
+  body.bw .col-head,body.bw .box-title,body.bw .rules h3{background:#e9e9e9}
+  body.bw .idbox{background:#f5f5f5}
+  body.bw .setpill{background:#e3e3e3}
+  body.bw .warn-black{background:#000}
+  body.bw .warn-pen,body.bw .note{background:#fff;box-shadow:none}
+  body.bw .head-top > .idbox{border-color:#222}
+  body.bw .b{border-color:#000;color:#000}
+  body.bw .col,body.bw .box,body.bw .rules{border-color:#000}
+  body.bw .title::before,body.bw .title::after{background:linear-gradient(90deg,transparent,#000)}
+  body.bw .title::after{background:linear-gradient(270deg,transparent,#000)}
+  body.bw .foot{border-top-color:#999}
+
+  /* ===== আদর্শলিপি ফন্ট (সব লেখায়) ===== */
+  @font-face{font-family:'AdarshaLipi';font-weight:400;font-style:normal;src:local('AdarshaLipi'),local('Adarsha Lipi'),local('AdorshoLipi'),local('Adorsho Lipi'),local('AdarshaLipi-Regular'),local('AdorshoLipi-Regular'),local('AdarshaLipi_Normal'),local('Adarsha Lipi Normal')}
+  :root{--font-bn:'AdarshaLipi','AdorshoLipi','Adarsha Lipi','Adorsho Lipi','Kalpurush','Siyam Rupali','Noto Sans Bengali','Hind Siliguri',sans-serif}
+  html,body,.a4-sheet,.a4-sheet *:not(.font-en):not(.font-mono-code):not(.yearbox span):not(svg):not(svg *){font-family:var(--font-bn)}
+  .idbox .code,.idbox .cap,.digits .b,.digits .dcol .w,.received-box,.datebox,.choice-item .b,.keytag,.foot .font-en,.foot .font-mono-code{font-family:var(--font-en)}
+  .yearbox span{font-family:Arial,sans-serif}
+  .a4-sheet{font-feature-settings:"liga" 1,"calt" 1;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased}
+
+  /* ===== SutonnyOMJ (ইউনিকোড) বিকল্প ===== */
+  @font-face{font-family:'SutonnyOMJ';font-weight:400;font-style:normal;src:local('SutonnyOMJ'),local('Sutonny OMJ'),local('SutonnyOMJ-Regular'),local('SutonnyMJ'),local('Sutonny MJ')}
+  @font-face{font-family:'SutonnyOMJ';font-weight:700;font-style:normal;src:local('SutonnyOMJ Bold'),local('SutonnyOMJ-Bold'),local('Sutonny OMJ Bold')}
+  body.f-sutonny{--font-bn:'SutonnyOMJ','AdarshaLipi','AdorshoLipi','Kalpurush','Siyam Rupali','Noto Sans Bengali','Hind Siliguri',sans-serif}
 </style>
 </head>
 
@@ -312,6 +448,35 @@
         <input id="inp-zoom" type="range" min="50" max="120" value="100" class="w-full accent-fuchsia-500 cursor-pointer h-1.5 bg-slate-700 rounded-lg mt-1.5" />
       </div>
     </div>
+  </div>
+
+  <div class="bg-white/5 border border-white/10 rounded-xl p-3 mb-3.5">
+    <span class="block text-[11px] font-bold tracking-wider text-emerald-300 mb-2">🖨️ প্রিন্ট মোড (Color / B&amp;W)</span>
+    <div class="grid grid-cols-2 gap-1.5 bg-black/30 p-1 rounded-lg mb-2">
+      <button id="pm-color" type="button" class="py-1.5 px-2 rounded-md text-xs font-bold bg-fuchsia-600 text-white transition cursor-pointer">রঙিন</button>
+      <button id="pm-bw" type="button" class="py-1.5 px-2 rounded-md text-xs font-semibold text-slate-400 hover:text-white transition cursor-pointer">সাদা-কালো</button>
+    </div>
+    <div class="grid grid-cols-2 gap-1.5">
+      <button id="pm-print-color" type="button" class="bg-fuchsia-700 hover:bg-fuchsia-600 text-white text-[11px] font-bold py-1.5 rounded-lg cursor-pointer">🖨 রঙিন প্রিন্ট</button>
+      <button id="pm-print-bw" type="button" class="bg-slate-200 hover:bg-white text-slate-900 text-[11px] font-bold py-1.5 rounded-lg cursor-pointer">🖨 সাদা-কালো প্রিন্ট</button>
+    </div>
+    <p class="text-[10.5px] text-slate-400 mt-2 leading-snug">সাদা-কালো মোডে সব রঙ ধূসর/কালো হয়ে যায়, বৃত্ত ও বারকোড অপরিবর্তিত থাকে।</p>
+  </div>
+
+  <div class="bg-white/5 border border-white/10 rounded-xl p-3 mb-3.5">
+    <div class="flex items-center justify-between mb-1.5">
+      <span class="text-[11px] font-bold tracking-wider text-orange-300">🔤 বাংলা ফন্ট</span>
+      <span id="font-status" class="text-[10px] font-semibold text-slate-400">যাচাই হচ্ছে…</span>
+    </div>
+    <select id="sel-font" class="w-full mb-2 bg-slate-900 border border-slate-700 rounded-lg px-2 py-1.5 text-[11px] text-white focus:outline-none focus:border-orange-400">
+      <option value="adarsha">আদর্শলিপি (AdarshaLipi)</option>
+      <option value="sutonny">সুতনী ওএমজে (SutonnyOMJ)</option>
+    </select>
+    <label class="block cursor-pointer bg-slate-900 hover:bg-black border border-dashed border-orange-400/60 rounded-lg px-2 py-2 text-[11px] text-center text-orange-200 transition">
+      <span>⬆ ফন্ট ফাইল আপলোড (AdarshaLipi / SutonnyOMJ .ttf)</span>
+      <input id="inp-font" type="file" accept=".ttf,.otf,.woff,.woff2" multiple class="hidden" />
+    </label>
+    <p class="text-[10.5px] text-slate-400 mt-1.5 leading-snug">কম্পিউটারে আদর্শলিপি ইনস্টল থাকলে নিজে থেকেই ব্যবহার হবে। না থাকলে ফন্ট ফাইলটি একবার আপলোড করুন (Bold ফাইলের নামে "bold" থাকলে বোল্ড হিসেবে বসবে)। ব্রাউজারে সংরক্ষিত থাকবে। ফন্ট না পেলে Noto Sans Bengali ব্যবহার হবে।</p>
   </div>
 
   <div class="bg-white/5 border border-white/10 rounded-xl p-3 mb-3.5">
@@ -773,6 +938,73 @@
   }
 
   window.addEventListener('DOMContentLoaded', () => { initStudio(); renderAllSheets(); });
+
+  (function(){
+    const bc=document.getElementById('pm-color'), bb=document.getElementById('pm-bw');
+    const on='py-1.5 px-2 rounded-md text-xs font-bold bg-fuchsia-600 text-white transition cursor-pointer';
+    const off='py-1.5 px-2 rounded-md text-xs font-semibold text-slate-400 hover:text-white transition cursor-pointer';
+    function setMode(bw){
+      document.body.classList.toggle('bw', bw);
+      bc.className = bw ? off : on;
+      bb.className = bw ? on.replace('bg-fuchsia-600','bg-slate-500') : off;
+      showToast(bw ? 'সাদা-কালো মোড চালু' : 'রঙিন মোড চালু');
+    }
+    bc.addEventListener('click',()=>setMode(false));
+    bb.addEventListener('click',()=>setMode(true));
+    document.getElementById('pm-print-color').addEventListener('click',()=>{setMode(false);setTimeout(()=>window.print(),150)});
+    document.getElementById('pm-print-bw').addEventListener('click',()=>{setMode(true);setTimeout(()=>window.print(),150)});
+  })();
+
+  (function(){
+    const st=document.getElementById('font-status'), sel=document.getElementById('sel-font');
+    const KEY='omr_fonts_v2', PKEY='omr_font_pick';
+    const FAM={adarsha:'AdarshaLipi', sutonny:'SutonnyOMJ'};
+    function refit(){ try{ renderAllSheets(); }catch(e){} }
+    function apply(){
+      document.body.classList.toggle('f-sutonny', sel.value==='sutonny');
+      try{ localStorage.setItem(PKEY, sel.value); }catch(e){}
+      refit(); setTimeout(check,150);
+    }
+    function check(){
+      const fam=FAM[sel.value];
+      const c=document.createElement('canvas').getContext('2d'), txt='সফিপুর এভারগ্রীন স্মার্ট স্কুল';
+      c.font="40px sans-serif"; const w0=c.measureText(txt).width;
+      c.font='40px "'+fam+'", sans-serif'; const w1=c.measureText(txt).width;
+      const has=Math.abs(w0-w1)>0.5;
+      st.textContent = has ? '✔ '+fam+' সক্রিয়' : '⚠ '+fam+' পাওয়া যায়নি – বিকল্প ফন্ট';
+      st.className='text-[10px] font-semibold '+(has?'text-emerald-300':'text-amber-300');
+    }
+    async function addFace(fam, buf, bold){
+      const ff=new FontFace(fam, buf, {weight: bold?'700':'400', style:'normal'});
+      await ff.load(); document.fonts.add(ff);
+    }
+    const b64=ab=>{let s='',u=new Uint8Array(ab);for(let i=0;i<u.length;i+=0x8000)s+=String.fromCharCode.apply(null,u.subarray(i,i+0x8000));return btoa(s)};
+    const unb64=b=>{const s=atob(b),u=new Uint8Array(s.length);for(let i=0;i<s.length;i++)u[i]=s.charCodeAt(i);return u.buffer};
+    async function restore(){
+      try{
+        const saved=JSON.parse(localStorage.getItem(KEY)||'[]');
+        for(const f of saved) await addFace(f.fam, unb64(f.data), f.bold);
+        const pick=localStorage.getItem(PKEY); if(pick&&FAM[pick]) sel.value=pick;
+      }catch(e){}
+      apply();
+    }
+    sel.addEventListener('change', apply);
+    document.getElementById('inp-font').addEventListener('change', async e=>{
+      const files=[...e.target.files]; if(!files.length) return;
+      let store=[]; try{ store=JSON.parse(localStorage.getItem(KEY)||'[]'); }catch(_){}
+      let lastFam=null;
+      for(const f of files){
+        const ab=await f.arrayBuffer(), bold=/bold|bd/i.test(f.name);
+        const fam=/sutonny/i.test(f.name)?'SutonnyOMJ':'AdarshaLipi'; lastFam=fam;
+        try{ await addFace(fam, ab.slice(0), bold); store=store.filter(x=>!(x.fam===fam&&x.bold===bold)); store.push({fam,bold,data:b64(ab)}); }
+        catch(err){ showToast('ফন্ট লোড হয়নি: '+f.name); }
+      }
+      try{ localStorage.setItem(KEY, JSON.stringify(store)); }catch(_){ showToast('ফন্ট সংরক্ষণ হয়নি (সাইজ বড়), তবে এখন চালু আছে'); }
+      if(lastFam) sel.value = lastFam==='SutonnyOMJ'?'sutonny':'adarsha';
+      apply(); showToast('ফন্ট চালু হয়েছে');
+    });
+    (document.fonts&&document.fonts.ready?document.fonts.ready:Promise.resolve()).then(restore);
+  })();
 </script>
 </body>
 </html>
